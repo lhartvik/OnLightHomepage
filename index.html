@@ -142,7 +142,33 @@
           <input type="email" id="email" name="email" required />
           <label for="message">Melding:</label>
           <textarea id="message" name="message" required></textarea>
-          <button id="submit_msg">Send inn</button>
+            <button id="submit_msg">Send inn</button>
+            <script>
+            document.getElementById("submit_msg").addEventListener("click", function (event) {
+              const name = document.getElementById("name").value;
+              const email = document.getElementById("email").value;
+              const message = document.getElementById("message").value;
+
+              const textOnlyPattern = /^[a-zA-ZæøåÆØÅ.,?!-_+-*/\s]+$/;
+              const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              const namePattern = /^[a-zA-ZæøåÆØÅ\s]+$/;
+              const messagePattern = /^[a-zA-ZæøåÆØÅ.,?!\s]+$/;
+
+              if (!namePattern.test(name)) {
+              alert("Navn kan kun inneholde bokstaver og mellomrom.");
+              event.preventDefault();
+              return;
+              }
+
+              if (!textOnlyPattern.test(message)) {
+              alert("Meldingen kan kun inneholde bokstaver, vanlige tegn og mellomrom.");
+              event.preventDefault();
+              return;
+              }
+
+              // Allow email to pass as it has a different format
+            });
+            </script>
         </form>
       </section>
     </main>
