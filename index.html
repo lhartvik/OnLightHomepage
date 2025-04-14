@@ -18,18 +18,6 @@
       <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
       <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function () {
-          const firebaseConfig = {
-            apiKey: "${{ secrets.FIREBASE_API_KEY }}",
-            appId: "${{ secrets.FIREBASE_APP_ID }}",
-            authDomain: "onlighthomepage.firebaseapp.com",
-            projectId: "onlighthomepage",
-            storageBucket: "onlighthomepage.firebasestorage.app",
-            messagingSenderId: "${{ secrets.FIREBASE_MESSAGING_SENDER_ID }}",
-            measurementId: "${{ secrets.FIREBASE_MEASUREMENT_ID }}",
-          };
-
-          firebase.initializeApp(firebaseConfig);
-
           var push_to_firebase = async function (data) {
             alert(
               "Takk for melding. Vi sjekker meldingen innen et par dager og vil svare deg så snart som mulig."
