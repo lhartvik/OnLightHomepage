@@ -27,26 +27,23 @@
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
-                name: data.name,
-                email: data.email,
-                message: data.message,
+                name: data.name.value,
+                email: data.email.value,
+                message: data.message.value,
               }),
-            })
+              })
               .then(function (response) {
-                if (response.ok) {
-                  console.log("Message sent successfully");
-                  location.reload();
-                } else {
-                  console.error(
-                    "Failed to send message: ",
-                    response.statusText
-                  );
-                }
+              if (response.ok) {
+                console.log("Message sent successfully");
+                location.reload();
+              } else {
+                console.error("Failed to send message: ", response.statusText);
+              }
               })
               .catch(function (error) {
-                console.error("Message could not be sent: ", error);
-              });
-          };
+              console.error("Message could not be sent: ", error);
+                });
+              }; // Closing brace for push_to_firebase function
 
           var contact_submit = function (event) {
             event.preventDefault();
@@ -99,9 +96,9 @@
           <li>
             Når det er nærmest ubegrenset hvor mange dager du kan logge, kan du
             se på trender over lengre tid, ikke bare begrenset antall dager før
-            du snakker med nevrolog, og lære deg hvordan medisinen hjelper
-            akkurat deg og følge med på endringer hvis du legger om f.eks.
-            kosthold, treningsvaner, søvnmønster eller andre ting.
+            du snakker med nevrolog, og lære deg hvordan medisinen hjelper akkurat deg
+            og følge med på endringer hvis du legger om f.eks. kosthold, treningsvaner, 
+            søvnmønster eller andre ting.
           </li>
           <li>
             Viser hvor lenge det er siden du tok medisin sist(dette bruker jeg
@@ -120,7 +117,7 @@
         </p>
       </section>
       <section id="download">
-        <h2>Lenker til appen på App Store og Play Store</h2>
+        <h2>Lenker til appen på App Store og Play Store</h2>        
         <a href="link-to-ios-app">Kommer snart til Ios</a>
         <a href="link-to-android-app">Kommer snart til Android</a>
       </section>
@@ -133,7 +130,7 @@
           <input type="email" id="email" name="email" required />
           <label for="message">Melding:</label>
           <textarea id="message" name="message" required></textarea>
-          <button id="submit_msg">Send inn</button>
+            <button id="submit_msg">Send inn</button>
         </form>
       </section>
     </main>
