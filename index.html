@@ -51,14 +51,11 @@
 
           var contact_submit = function (event) {
             event.preventDefault();
-            var name = document.getElementById("name");
-            var email = document.getElementById("email");
-            var msg = document.getElementById("message");
+            const name = document.getElementById("name");
+            const email = document.getElementById("email");
+            const msg = document.getElementById("message");
 
-            const name = document.getElementById("name").value;
-              const email = document.getElementById("email").value;
-              const message = document.getElementById("message").value;
-            var data = {
+            const data = {
               name: name.value,
               email: email.value,
               msg: msg.value,
