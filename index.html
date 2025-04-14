@@ -14,8 +14,6 @@
         <a href="#features">Funksjoner</a>
         <a href="#contact">Kontakt</a>
       </nav>
-      <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-app.js"></script>
-      <script src="https://www.gstatic.com/firebasejs/6.2.4/firebase-firestore.js"></script>
       <script type="text/javascript">
         document.addEventListener("DOMContentLoaded", function () {
           var push_to_firebase = async function (data) {
@@ -27,7 +25,7 @@
             const email = document.getElementById("email").value;
             const message = document.getElementById("message").value;
 
-            await fetch("https://savemessage-4r26qw4i6q-lz.a.run.app", {
+            await fetch("https://savemessage-u2palcrjaa-lz.a.run.app", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
