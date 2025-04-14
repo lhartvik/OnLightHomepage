@@ -21,15 +21,20 @@
               "Takk for melding. Vi sjekker meldingen innen et par dager og vil svare deg så snart som mulig."
             );
 
+            console.log("Sending message to Firebase: ", data);
+            console.log(data.name);
+            console.log(data.email);
+            console.log(data.message);
+
             await fetch("https://savemessage-u2palcrjaa-lz.a.run.app", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
               },
               body: JSON.stringify({
-                name: data.name.value,
-                email: data.email.value,
-                message: data.message.value,
+                name: data.name,
+                email: data.email,
+                message: data.message,
               }),
               })
               .then(function (response) {
@@ -47,14 +52,14 @@
 
           var contact_submit = function (event) {
             event.preventDefault();
-            const name = document.getElementById("name");
-            const email = document.getElementById("email");
-            const msg = document.getElementById("message");
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const msg = document.getElementById("message").value;
 
             const data = {
-              name: name.value,
-              email: email.value,
-              msg: msg.value,
+              name: name,
+              email: email,
+              msg: msg,
             };
             push_to_firebase(data);
           };
