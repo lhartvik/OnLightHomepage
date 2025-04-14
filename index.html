@@ -54,12 +54,12 @@
             event.preventDefault();
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
-            const msg = document.getElementById("message").value;
+            const message = document.getElementById("message").value;
 
             const data = {
               name: name,
               email: email,
-              msg: msg,
+              message: message,
             };
             push_to_firebase(data);
           };
