@@ -56,6 +56,28 @@
             const email = document.getElementById("email").value;
             const message = document.getElementById("message").value;
 
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+              const namePattern = /^[a-zA-ZæøåÆØÅ\s]+$/;
+              const messagePattern = /^[a-zA-ZæøåÆØÅ\.,?!\s]+$/;
+
+              if (!namePattern.test(name) || !name) {
+              alert("Navn kan kun inneholde bokstaver og mellomrom.");
+              event.preventDefault();
+              return;
+              }
+
+              if (!emailPattern.test(email) || !email) {
+              alert("Må være gyldig epostadresse(ingen mellomrom, en og bare en alfakrøll, minst ett punktum etter alfakrøll).");
+              event.preventDefault();
+              return;
+              }
+
+              if (!textOnlyPattern.test(message) || !message) {
+              alert("Meldingen kan kun inneholde bokstaver, vanlige tegn og mellomrom.");
+              event.preventDefault();
+              return;
+              }
+
             console.log("Message:"+message)
 
             const data = {
